@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "7e899e4a-d7ef-44ae-8c4c-214f07dff73e",
+		"name": "Agreena test task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15230320"
+	},
+	"item": [
+		{
+			"name": "Register new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n               \"Email\": \"SomeEmail@gmail.com\",\r\n               \"Password\": \"123456bb\",\r\n               \"UserName\": \"SomeUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/signUp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"TestUser1\",\r\n    \"Password\": \"123456bb\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/signIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get owned certificates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjExLCJFbWFpbCI6IlRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjU4NDc2MjA4LCJleHAiOjE2NTg0Nzk4MDh9.o3NPoOXEds-2FCYlnabs_ZSmk3FDGJEZiXuYsL_OQVU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/getOwnedCertificates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"getOwnedCertificates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get available certificates",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjExLCJFbWFpbCI6IlRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjU4NDc2MjA4LCJleHAiOjE2NTg0Nzk4MDh9.o3NPoOXEds-2FCYlnabs_ZSmk3FDGJEZiXuYsL_OQVU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/getAvailableCertificates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"getAvailableCertificates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer My Certificate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjEsIkVtYWlsIjoiVFVzZXIxQGdtYWlsLmNvbSIsImlhdCI6MTY1ODQ3OTk1NywiZXhwIjoxNjU4NDgzNTU3fQ.9932Xkee38EXK3FLgUcY7fAtSkNBV_S4auYGplaaRrQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"anotherUserId\": 11,\r\n    \"CertificateId\": 96\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/transferMyCertificate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"transferMyCertificate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
